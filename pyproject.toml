@@ -1,6 +1,6 @@
 [project]
 name = "django-inngest"
-version = "0.0.4"
+version = "0.0.5"
 description = "Missing Django integration for Inngest"
 readme = "README.md"
 keywords = [ "background-tasks", "django", "event-driven", "inngest", "scheduler" ]
