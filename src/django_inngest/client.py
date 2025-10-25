@@ -28,6 +28,3 @@ if DJANGO_INNGEST_CLIENT_LOGGER:
     client_config["logger"] = logging.getLogger(DJANGO_INNGEST_CLIENT_LOGGER)
 
 inngest_client = inngest.Inngest(**client_config)
-
-
-# signing_key_fallback=settings.INNGEST_SIGNING_KEY_FALLBACK,

@@ -13,11 +13,18 @@ uv add inngest django-inngest
 Update `urls.py` to include:
 
 ```python
+from django.contrib import admin
+from django.urls import path, include
+from django_inngest.urls import inngest_urls
+
 urlpatterns = [
     # ...
-    path("api/inngest/", include("django_inngest.urls")),
+    path("admin", admin.site.urls),
     # ...
 ]
+
+# uses DJANGO_INNGEST_SERVE_PATH from settings.py
+urlpatterns += inngest_urls
 ```
 
 
@@ -40,6 +47,8 @@ DJANGO_INNGEST_INACTIVE_FUNCTION_IDS = os.environ.get(
 DJANGO_INNGEST_AUTO_DISCOVER_FUNCTIONS = os.environ.get(
     "DJANGO_INNGEST_AUTO_DISCOVER_FUNCTIONS", True
 )
+# no trailing slash or leading slash
+DJANGO_INNGEST_SERVE_PATH = os.environ.get("DJANGO_INNGEST_SERVE_PATH", "api/inngest")
 ```
 
 ## Usage
