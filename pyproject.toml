@@ -3,7 +3,7 @@ name = "django-inngest"
 version = "0.0.1"
 description = "Missing Django integration for Inngest"
 readme = "README.md"
-keywords = [ "django", "event-driven", "inngest", "scheduler" ]
+keywords = [ "background-tasks", "django", "event-driven", "inngest", "scheduler" ]
 authors = [
   { name = "Justin Mitchel", email = "justin@codingforentrepreneurs.com" },
 ]
