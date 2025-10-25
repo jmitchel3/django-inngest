@@ -23,6 +23,6 @@ if DJANGO_INNGEST_AUTO_DISCOVER_FUNCTIONS:
 DJANGO_INNGEST_SERVE_PATH = DJANGO_INNGEST_SERVE_PATH.rstrip("/").lstrip("/")
 
 inngest_url = inngest.django.serve(
-    inngest_client, active_inngest_functions, path=DJANGO_INNGEST_SERVE_PATH
+    inngest_client, active_inngest_functions, serve_path=DJANGO_INNGEST_SERVE_PATH
 )
 inngest_urls = [inngest_url]
