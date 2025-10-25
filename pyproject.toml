@@ -1,0 +1,27 @@
+[project]
+name = "django-inngest"
+version = "0.0.1"
+description = "Missing Django integration for Inngest"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.2.7",
+    "inngest>=0.5.10",
+]
+keywords = [ "django", "inngest", "event-driven", "scheduler" ]
+authors = [
+  { name = "Justin Mitchel", email = "justin@codingforentrepreneurs.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Django",
+  "Framework :: Django :: 5.2",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+urls.Changelog = "https://github.com/jmitchel3/django-inngest"
+urls.Documentation = "https://github.com/jmitchel3/django-inngest"
+urls.Funding = "https://github.com/jmitchel3/django-inngest"
+urls.Repository = "https://github.com/jmitchel3/django-inngest"
