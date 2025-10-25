@@ -55,7 +55,7 @@ addopts = "--reuse-db"
 [tool.coverage.run]
 branch = true
 parallel = true
-source_pkgs = [ "django_googler" ]
+source_pkgs = [ "django_inngest" ]
 omit = [ "*/tests/*" ]
 
 [tool.coverage.report]
