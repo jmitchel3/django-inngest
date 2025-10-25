@@ -1,7 +1,6 @@
 import logging
 
 import inngest
-from django.conf import settings
 
 from django_inngest.defaults import (
     DJANGO_INNGEST_APP_ID,
@@ -15,7 +14,7 @@ from django_inngest.defaults import (
 
 client_config = {
     "app_id": DJANGO_INNGEST_APP_ID or "unset-django-inngest-app-id",
-    "is_production": settings.INNGEST_IS_PRODUCTION,
+    "is_production": DJANGO_INNGEST_IS_PRODUCTION,
 }
 
 # Only add event_key and signing_key in production
