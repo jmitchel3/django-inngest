@@ -119,7 +119,8 @@ def discover_inngest_functions(inactive_function_ids=None, inngest_client=None):
 
             except ImportError as e:
                 logger.warning(
-                    f"Could not import workflows from {app_config.name}: {e}"
+                    f"Workflow loading failed from {app_config.name} at {workflows_file}: {e}",
+                    exc_info=True,
                 )
             except Exception as e:
                 logger.error(
@@ -128,8 +129,8 @@ def discover_inngest_functions(inactive_function_ids=None, inngest_client=None):
                 )
 
     # Summary logging
-    logger.info(f"\n{'='*60}")
-    logger.info(f"Inngest Function Discovery Summary:")
+    logger.info(f"\n{'=' * 60}")
+    logger.info("Inngest Function Discovery Summary:")
     if app_id_prefix:
         logger.info(f"  App ID: {app_id_prefix}")
     logger.info(f"  Total functions found: {len(all_found_ids)}")
@@ -139,7 +140,7 @@ def discover_inngest_functions(inactive_function_ids=None, inngest_client=None):
     )
 
     if all_found_ids:
-        logger.info(f"\nAll discovered function IDs:")
+        logger.info("\nAll discovered function IDs:")
         for fn_id in all_found_ids:
             status = "INACTIVE" if fn_id in normalized_inactive else "ACTIVE"
             logger.info(f"  - {fn_id} [{status}]")
@@ -150,6 +151,6 @@ def discover_inngest_functions(inactive_function_ids=None, inngest_client=None):
         logger.warning(
             f"\n⚠ These inactive function IDs were not found: {list(not_found)}"
         )
-    logger.info(f"{'='*60}\n")
+    logger.info(f"{'=' * 60}\n")
 
     return discovered_functions
